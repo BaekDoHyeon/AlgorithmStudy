@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int count = sc.nextInt();
-        int target = sc.nextInt();
+        int conNum = sc.nextInt();
         int[] arr = new int[count];
         StringBuilder sb = new StringBuilder();
 
@@ -13,7 +13,7 @@ public class Main {
             arr[i] = sc.nextInt();
 
         for (int i : arr) {
-            if(i < target)
+            if(i < conNum)
                 sb.append(i + " ");
         }
 
