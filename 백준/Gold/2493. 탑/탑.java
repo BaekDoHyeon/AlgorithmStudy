@@ -20,7 +20,7 @@ public class Main {
         for (int i = 1; i <= topCnt; i++) {
             int tower = Integer.parseInt(st.nextToken());
 
-            // 처음 들어온 탑이 아니라면 -> 최소 탑의 번호는 2~
+            // 처음 들어온 탑이 아니라면 + stack 이 비어있지 않다면... -> 최소 탑의 번호는 2~
             while (!stack.isEmpty()) {
                 // stack 맨위에 있는 탑의 높이가 현재 들어온 탑의 높이보다 크다면 (레이저 수신 가능)
                 if (stack.peek()[1] > tower) {
