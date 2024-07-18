@@ -28,6 +28,11 @@ public class Main {
                     stack.push(value++);
             }
 
+            // search() 적극 활용
+            // 현재 찾고 있는 숫자가 stack 의 맨 위에 있다면 pop() 호출 후 - 출력
+            // 현재 찾고 있는 숫자가 있긴 하지만 stack 맨 위에 없다면 수열을 만들 수 없는 상황이므로 NO 출력
+            // 현재 찾고있는 숫자가 없다면 i의 값을 그대로 두기 위해서 i-- 하고 반복문 반복
+            // i의 값(현재 stack 에서 찾고있는 값)은 반드시 찾고 넘어가야 한다.
             if (stack.lastElement().equals(list.get(i))) {
                 stack.pop();
                 if (i == list.size()-1) sb.append("-");
