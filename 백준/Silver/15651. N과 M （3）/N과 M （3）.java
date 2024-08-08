@@ -1,9 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
+// 입력을 n과 m을 7으로 주었을 때 자바 코드로 시간 찍어보니 3623이 나오는데..? 통과..?
 public class Main {
 
     static int[] arr, ch, result;
@@ -12,7 +12,6 @@ public class Main {
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
-        long startTime = System.currentTimeMillis();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -36,8 +35,6 @@ public class Main {
 
         DFS(0);
         System.out.println(sb);
-        long endTime = System.currentTimeMillis();
-        //System.out.println("걸린 시간: " + (endTime-startTime));
     }
 
     //수열에 값을 하나 추가하면 cnt 1 증가
