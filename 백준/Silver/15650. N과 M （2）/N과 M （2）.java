@@ -15,16 +15,16 @@ public class Main {
         m = sc.nextInt();
 
         //1~n 까지의 숫자가 담길 배열
-        arr = new int[n+1];
+        arr = new int[n];
 
         //1~n 까지의 숫자중 중복을 피하기 위한 체크 배열
-        ch = new int[n+1];
+        ch = new int[n];
 
         //수열을 담을 배열
         result = new int[m+1];
 
-        for (int i = 1; i <= n; i++)
-            arr[i] = i;
+        for (int i = 0; i < n; i++)
+            arr[i] = i + 1;
 
         DFS(1);
     }
@@ -36,7 +36,7 @@ public class Main {
                 System.out.print(result[i] + " ");
             System.out.println();
         } else {
-            for (int i = 1; i <= n; i++) {
+            for (int i = 0; i < n; i++) {
                 if (ch[i] == 0 && result[cnt-1] < arr[i]) {
                     result[cnt] = arr[i];
                     ch[i] = 1;
