@@ -1,0 +1,11 @@
+SELECT 
+   os.USER_ID, os.PRODUCT_ID 
+FROM 
+    (SELECT 
+        USER_ID, PRODUCT_ID, COUNT(*) cnt 
+     FROM 
+        ONLINE_SALE 
+     GROUP BY 
+        USER_ID, PRODUCT_ID) os
+WHERE os.cnt > 1
+ORDER BY os.USER_ID ASC, os.PRODUCT_ID DESC
