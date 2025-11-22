@@ -1,0 +1,14 @@
+SELECT ID, FISH_NAME, LENGTH
+FROM (
+    SELECT 
+        fi.ID,
+        fi.FISH_TYPE,
+        fi.LENGTH,
+        fni.FISH_NAME,
+        ROW_NUMBER() OVER (PARTITION BY fi.FISH_TYPE ORDER BY fi.LENGTH DESC, fi.ID) AS rn
+    FROM FISH_INFO fi
+    JOIN FISH_NAME_INFO fni ON fi.FISH_TYPE = fni.FISH_TYPE
+    WHERE fi.LENGTH IS NOT NULL
+) t
+WHERE rn = 1
+ORDER BY ID;
